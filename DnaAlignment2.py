@@ -37,7 +37,7 @@ def sequenceAlign(seqA, seqB):
 
             routeMatrix[i][j] = route
             
-    score = scoreMatrix[i][j]                                   # store the score
+    score = scoreMatrix[k][m]                                   # store the score
 
     alignA = []
     alignB = []
@@ -52,11 +52,11 @@ def sequenceAlign(seqA, seqB):
             alignB.append(seqB[j - 1])
             i -= 1
             j -= 1
-        if route == 1:                                          # that score comes from vertical, gap in seqB
+        if route == 1:                                          # that score comes from horizon, gap in seqB
             alignA.append(seqA[i - 1])
             alignB.append('-')
             i -= 1
-        if route == 2:                                          # that score comes from horizon, gap in seqA
+        if route == 2:                                          # that score comes from vertical, gap in seqA
             alignA.append('-')
             alignB.append(seqB[j - 1])
             j -= 1
